@@ -1386,7 +1386,7 @@ public class FullscreenActivity extends AppCompatActivity implements PopupMenu.O
 
             public void onTick(long millisUntilFinished) {
                 mSpawnInTV.setText(getResources().getString(R.string.spawn_in_label, (millisUntilFinished / 1000)));
-                playSound(R.raw.beep, getApplicationContext());
+                playSound(R.raw.sfx_beep, getApplicationContext());
             }
 
             public void onFinish() {
@@ -1398,7 +1398,7 @@ public class FullscreenActivity extends AppCompatActivity implements PopupMenu.O
                 mHealth = Globals.getInstance().mFullHealth;
                 mHealthBar.setProgress(mHealth);
                 Globals.getInstance().mGameState = Globals.GAME_STATE_RUNNING;
-                playSound(R.raw.spawn, getApplicationContext());
+                playSound(R.raw.sfx_player_spawn, getApplicationContext());
                 finishReload();
                 if (mStartGameTimer) {
                     mStartGameTimer = false;
@@ -1432,7 +1432,7 @@ public class FullscreenActivity extends AppCompatActivity implements PopupMenu.O
             public void onFinish() {
                 Log.d(TAG, "Game time ended!");
                 Toast.makeText(getApplicationContext(), getString(R.string.dialog_game_time_expired), Toast.LENGTH_SHORT).show();
-                playSound(R.raw.eliminated, getApplicationContext());
+                playSound(R.raw.sfx_player_killed, getApplicationContext());
                 if (mTcpClient.isDedicatedServer()) {
                     mTcpClient.sendTCPMessage(TcpServer.TCPMESSAGE_PREFIX + TcpServer.TCPPREFIX_MESG + NetMsg.NETMSG_ENDGAME);
                 } else {
@@ -1806,7 +1806,7 @@ public class FullscreenActivity extends AppCompatActivity implements PopupMenu.O
         mLastShotCount = 0;
         endGame();
         initBatteryQueue();
-        playSound(R.raw.eliminated, getApplicationContext());
+        playSound(R.raw.sfx_weapon_disconnected, getApplicationContext());
     }
 
     private AlertDialog mBlasterDisconnectDialog = null;
@@ -1880,7 +1880,7 @@ public class FullscreenActivity extends AppCompatActivity implements PopupMenu.O
                             Log.d(TAG, "failed to find ID characteristic");
                         }
                         if (Globals.getInstance().mGameState == Globals.GAME_STATE_NONE)
-                            playSound(R.raw.spawn, getApplicationContext());
+                            playSound(R.raw.sfx_player_spawn, getApplicationContext());
                         else {
                             if (Globals.getInstance().mGameState == Globals.GAME_STATE_RUNNING)
                                 startReload();
@@ -1912,7 +1912,7 @@ public class FullscreenActivity extends AppCompatActivity implements PopupMenu.O
                     mReloadBar.setVisibility(View.INVISIBLE);
                     mShotsRemainingTV.setVisibility(View.VISIBLE);
                     if (!Globals.getInstance().mReloadOnEmpty)
-                        playSound(R.raw.reload, getApplicationContext());
+                        playSound(R.raw.sfx_gun_reload, getApplicationContext());
                     Log.d(TAG, "Reload finished");
                 }
             }
@@ -2021,7 +2021,7 @@ public class FullscreenActivity extends AppCompatActivity implements PopupMenu.O
             if (trigger_counter != mLastTriggerCount) {
                 mLastTriggerCount = trigger_counter;
                 if (shotsRemaining == 0 || Globals.getInstance().mGameState != Globals.GAME_STATE_RUNNING) {
-                    playSound(R.raw.empty, getApplicationContext());
+                    playSound(R.raw.sfx_empty_shot, getApplicationContext());
                     mEmptyTriggerCount++;
                     if (mEmptyTriggerCount >= MAX_EMPTY_TRIGGER_PULLS && Globals.getInstance().mGameState == Globals.GAME_STATE_RUNNING)
                         startReload(); // Auto reload after this many empty trigger pulls (for young players)
@@ -2249,7 +2249,7 @@ public class FullscreenActivity extends AppCompatActivity implements PopupMenu.O
                                     mHitIV.setVisibility(View.VISIBLE);
                                     mHitIV.setBackgroundResource(R.drawable.hit_animation);
                                     vibrator.vibrate(HIT_VIBRATE_DURATION_MILLISECONDS);
-                                    playSound(R.raw.hit, getApplicationContext());
+                                    playSound(R.raw.sfx_player_hit, getApplicationContext());
                                     Animation animationFadeOut = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fadeout);
                                     mHitIV.startAnimation(animationFadeOut);
                                     mHitAnimation = (AnimationDrawable) mHitIV.getBackground();
@@ -2273,7 +2273,7 @@ public class FullscreenActivity extends AppCompatActivity implements PopupMenu.O
                                 }
                             } else {
                                 vibrator.vibrate(HIT_VIBRATE_DURATION_MILLISECONDS);
-                                playSound(R.raw.eliminated, getApplicationContext());
+                                playSound(R.raw.sfx_player_killed, getApplicationContext());
                                 if (mHasLivesLimit)
                                     mEliminationCount--;
                                 else
@@ -2324,7 +2324,7 @@ public class FullscreenActivity extends AppCompatActivity implements PopupMenu.O
             if (mLastShotCount != shotsRemaining) {
                 setShotsRemaining(shotsRemaining);
                 if (shotsRemaining != Globals.getInstance().mFullReload && mReloading == RELOADING_STATE_NONE) {
-                    playSound(R.raw.shootingshort, getApplicationContext());
+                    playSound(R.raw.sfx_gun_shot, getApplicationContext());
                     if (mUseNetwork && mLastShotFired < System.currentTimeMillis()) {
                         mLastShotFired = System.currentTimeMillis() + HIT_ANIMATION_DURATION_MILLISECONDS;
                         mUDPListenerService.sendUDPMessageAll(NetMsg.NETMSG_SHOTFIRED);
@@ -2441,7 +2441,7 @@ public class FullscreenActivity extends AppCompatActivity implements PopupMenu.O
                         mScoreIncreasePlayerNameTV.setVisibility(View.GONE);
                     }
                 }, ELIMINATED_ANIMATION_DURATION_MILLISECONDS);
-                playSound(R.raw.score, getApplicationContext());
+                playSound(R.raw.sfx_enemy_killed, getApplicationContext());
                 if (Globals.getInstance().mGameMode != Globals.GAME_MODE_FFA) {
                     mTeamScore++;
                     score = "" + mTeamScore;
