@@ -564,6 +564,8 @@ public class UDPListenerService extends Service {
 
     public void startGame() {
         mIsListService = false; // There is no list service while the game is running
+        sendUDPMessage(NetMsg.NETMSG_STARTGAME, mBroadcastAddress, LISTEN_PORT);
+        Log.i("CHRIS", "GAMESTART");
     }
 
     public void endGame() {
