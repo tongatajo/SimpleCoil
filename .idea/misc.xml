@@ -27,14 +27,16 @@
         <entry key="..\:/Workplace/Projekte/22-02 SimpleCoil/SimpleCoil/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1935" />
         <entry key="..\:/Workplace/Projekte/22-02 SimpleCoil/SimpleCoil/app/src/main/res/drawable/hit_animation.xml" value="0.1715" />
         <entry key="..\:/Workplace/Projekte/22-02 SimpleCoil/SimpleCoil/app/src/main/res/drawable/hit_other_player_animation.xml" value="0.2395" />
+        <entry key="..\:/Workplace/Projekte/22-02 SimpleCoil/SimpleCoil/app/src/main/res/drawable/hit_other_player_out_animation.xml" value="0.2395" />
         <entry key="..\:/Workplace/Projekte/22-02 SimpleCoil/SimpleCoil/app/src/main/res/drawable/ic_add_circle_green_50dp.xml" value="0.2395" />
         <entry key="..\:/Workplace/Projekte/22-02 SimpleCoil/SimpleCoil/app/src/main/res/drawable/ic_battery_50_yellow_24dp.xml" value="0.1935" />
+        <entry key="..\:/Workplace/Projekte/22-02 SimpleCoil/SimpleCoil/app/src/main/res/drawable/ic_battery_alert_red_24dp.xml" value="0.2395" />
         <entry key="..\:/Workplace/Projekte/22-02 SimpleCoil/SimpleCoil/app/src/main/res/drawable/ic_flare_red_50dp.xml" value="0.1935" />
         <entry key="..\:/Workplace/Projekte/22-02 SimpleCoil/SimpleCoil/app/src/main/res/drawable/ic_person_red_50dp.xml" value="0.1935" />
         <entry key="..\:/Workplace/Projekte/22-02 SimpleCoil/SimpleCoil/app/src/main/res/drawable/ic_zoom_out_map_yellow_50dp.xml" value="0.1935" />
         <entry key="..\:/Workplace/Projekte/22-02 SimpleCoil/SimpleCoil/app/src/main/res/layout-land/activity_fullscreen.xml" value="0.15696649029982362" />
         <entry key="..\:/Workplace/Projekte/22-02 SimpleCoil/SimpleCoil/app/src/main/res/layout/activity_dedicated_server.xml" value="0.33" />
-        <entry key="..\:/Workplace/Projekte/22-02 SimpleCoil/SimpleCoil/app/src/main/res/layout/activity_fullscreen.xml" value="0.5" />
+        <entry key="..\:/Workplace/Projekte/22-02 SimpleCoil/SimpleCoil/app/src/main/res/layout/activity_fullscreen.xml" value="0.33" />
         <entry key="..\:/Workplace/Projekte/22-02 SimpleCoil/SimpleCoil/app/src/main/res/layout/blaster_disconnected_dialog.xml" value="0.18541666666666667" />
         <entry key="..\:/Workplace/Projekte/22-02 SimpleCoil/SimpleCoil/app/src/main/res/layout/game_limit_dialog.xml" value="0.18541666666666667" />
         <entry key="..\:/Workplace/Projekte/22-02 SimpleCoil/SimpleCoil/app/src/main/res/layout/player_data_dialog.xml" value="0.18541666666666667" />

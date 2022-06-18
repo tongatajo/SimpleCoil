@@ -109,6 +109,7 @@ public class UDPListenerService extends Service {
             //Log.d(TAG, "IP matched so ignored");
             return;
         }
+        Log.i("CHRIS", message + " received");
         if (message.startsWith(NetMsg.MESSAGE_PREFIX)) {
             message = message.substring(NetMsg.MESSAGE_PREFIX.length());
             if (message.startsWith(NetMsg.NETMSG_SHOTFIRED)) {

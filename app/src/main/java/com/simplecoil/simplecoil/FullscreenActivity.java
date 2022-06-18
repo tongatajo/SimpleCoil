@@ -511,7 +511,7 @@ public class FullscreenActivity extends AppCompatActivity implements PopupMenu.O
                         else {
                             mTcpClient.sendTCPMessage(TcpServer.TCPMESSAGE_PREFIX + TcpServer.TCPPREFIX_MESG + NetMsg.NETMSG_STARTGAME);
                         }
-                        mUDPListenerService.sendUDPMessage(NetMsg.NETMSG_STARTGAME, mUDPListenerService.mBroadcastAddress, mUDPListenerService.LISTEN_PORT);
+                        mUDPListenerService.sendUDPMessage(NetMsg.MESSAGE_PREFIX + NetMsg.NETMSG_STARTGAME, mUDPListenerService.mBroadcastAddress, mUDPListenerService.LISTEN_PORT);
                     } else
                         startGame();
                 }
@@ -1197,7 +1197,7 @@ public class FullscreenActivity extends AppCompatActivity implements PopupMenu.O
                         mUDPListenerService.endGame();
                 }
                 endGame();
-                mUDPListenerService.sendUDPMessage(NetMsg.NETMSG_ENDGAME, mUDPListenerService.mBroadcastAddress, mUDPListenerService.LISTEN_PORT);
+                mUDPListenerService.sendUDPMessage(NetMsg.MESSAGE_PREFIX + NetMsg.NETMSG_ENDGAME, mUDPListenerService.mBroadcastAddress, mUDPListenerService.LISTEN_PORT);
             }
         });
 
@@ -1443,6 +1443,7 @@ public class FullscreenActivity extends AppCompatActivity implements PopupMenu.O
                 } else {
                     endGame();
                 }
+                mUDPListenerService.sendUDPMessage(NetMsg.MESSAGE_PREFIX + NetMsg.NETMSG_ENDGAME, mUDPListenerService.mBroadcastAddress, mUDPListenerService.LISTEN_PORT);
             }
         }.start();
     }

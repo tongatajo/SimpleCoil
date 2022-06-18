@@ -183,7 +183,7 @@ public class DedicatedServerActivity extends AppCompatActivity implements PopupM
             mEndGameButton.setOnClickListener((new View.OnClickListener() {
                 public void onClick(View v) {
                     mTcpServer.endGame();
-                    mUDPListenerService.sendUDPMessage(NetMsg.NETMSG_ENDGAME, mUDPListenerService.mBroadcastAddress, mUDPListenerService.LISTEN_PORT);
+                    mUDPListenerService.sendUDPMessage(NetMsg.MESSAGE_PREFIX + NetMsg.NETMSG_ENDGAME, mUDPListenerService.mBroadcastAddress, mUDPListenerService.LISTEN_PORT);
                 }
 
             }));
@@ -198,7 +198,7 @@ public class DedicatedServerActivity extends AppCompatActivity implements PopupM
                         return;
                     }
                     startGame();
-                    mUDPListenerService.sendUDPMessage(NetMsg.NETMSG_STARTGAME, mUDPListenerService.mBroadcastAddress, mUDPListenerService.LISTEN_PORT);
+                    mUDPListenerService.sendUDPMessage(NetMsg.MESSAGE_PREFIX + NetMsg.NETMSG_STARTGAME, mUDPListenerService.mBroadcastAddress, mUDPListenerService.LISTEN_PORT);
                 }
             }));
         }
