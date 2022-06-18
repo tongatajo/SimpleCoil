@@ -505,10 +505,13 @@ public class FullscreenActivity extends AppCompatActivity implements PopupMenu.O
                             mNetworkPlayerCountTV.setText(R.string.network_player_1count);
                             return;
                         }
-                        if (mIsServer)
+                        if (mIsServer) {
                             mTcpServer.startGame();
-                        else
+                        }
+                        else {
                             mTcpClient.sendTCPMessage(TcpServer.TCPMESSAGE_PREFIX + TcpServer.TCPPREFIX_MESG + NetMsg.NETMSG_STARTGAME);
+                        }
+                        mUDPListenerService.sendUDPMessage(NetMsg.NETMSG_STARTGAME, mUDPListenerService.mBroadcastAddress, mUDPListenerService.LISTEN_PORT);
                     } else
                         startGame();
                 }
@@ -1187,12 +1190,14 @@ public class FullscreenActivity extends AppCompatActivity implements PopupMenu.O
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 if (mUseNetwork) {
-                    if (mTcpClient.isDedicatedServer())
+                    if (mTcpClient.isDedicatedServer()) {
                         mTcpClient.sendTCPMessage(TcpServer.TCPMESSAGE_PREFIX + TcpServer.TCPPREFIX_MESG + NetMsg.NETMSG_ENDGAME);
+                }
                     else
                         mUDPListenerService.endGame();
                 }
                 endGame();
+                mUDPListenerService.sendUDPMessage(NetMsg.NETMSG_ENDGAME, mUDPListenerService.mBroadcastAddress, mUDPListenerService.LISTEN_PORT);
             }
         });
 
@@ -1293,12 +1298,12 @@ public class FullscreenActivity extends AppCompatActivity implements PopupMenu.O
             mTeamTV.setText(R.string.no_team);
         } else if (mUseNetwork && Globals.getInstance().mGameMode != Globals.GAME_MODE_FFA) {
             mNetworkTeam = 1;
-            int x = ((Globals.MAX_PLAYER_ID + 1) / 2);
+            int x = ((Globals.MAX_PLAYER_ID + 1) / 8);
             if (Globals.getInstance().mGameMode == Globals.GAME_MODE_2TEAMS) {
                 if (Globals.getInstance().mPlayerID > x)
                     mNetworkTeam = 2;
             } else {
-                x = ((Globals.MAX_PLAYER_ID + 1) / 4);
+                x = ((Globals.MAX_PLAYER_ID + 1) / 8);
                 if (Globals.getInstance().mPlayerID > 3 * x)
                     mNetworkTeam = 4;
                 else if (Globals.getInstance().mPlayerID > 2 * x)
@@ -2448,9 +2453,9 @@ public class FullscreenActivity extends AppCompatActivity implements PopupMenu.O
                     mTeamScoreTV.setText(score);
                     if (!mTcpClient.isDedicatedServer()) {
                         // Send a message to all teammates about the score increase
-                        int teamSize = ((Globals.MAX_PLAYER_ID + 1) / 2);
+                        int teamSize = ((Globals.MAX_PLAYER_ID + 1) / 8);
                         if (Globals.getInstance().mGameMode == Globals.GAME_MODE_4TEAMS) {
-                            teamSize = ((Globals.MAX_PLAYER_ID + 1) / 4);
+                            teamSize = ((Globals.MAX_PLAYER_ID + 1) / 8);
                         }
                         int startPoint = (teamSize * mNetworkTeam) - teamSize + 1;
                         for (int x = startPoint; x < startPoint + teamSize; x++) {

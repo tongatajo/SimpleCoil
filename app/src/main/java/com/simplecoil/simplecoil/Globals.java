@@ -29,7 +29,7 @@ public class Globals {
 
     /* Highest player ID allowed in the GUI, absolute max is 0x3F or 63. Player ID 0 can technically
     be used but would require code changes to the hit detection if you really need 64 players. */
-    public static final byte MAX_PLAYER_ID = (byte) 0x10;
+    public static final byte MAX_PLAYER_ID = (byte) 0x3F;
 
     public static final byte RELOAD_COUNT = (byte) 30; // Number of shots you get after a reload, max 255
     public volatile byte mFullReload = RELOAD_COUNT;
@@ -137,6 +137,27 @@ public class Globals {
         if (player_id > MAX_PLAYER_ID)
             return INVALID_PLAYER_ID;
         if (mGameMode == GAME_MODE_2TEAMS) {
+            final int x = ((MAX_PLAYER_ID + 1) / 8);
+            if (player_id > x)
+                team = 2;
+        } else if (mGameMode == GAME_MODE_4TEAMS){
+            final int x = ((MAX_PLAYER_ID + 1) / 8);
+            if (player_id > 3 * x)
+                team = 4;
+            else if (player_id > 2 * x)
+                team = 3;
+            else if (player_id > x)
+                team = 2;
+        } else if (mGameMode == GAME_MODE_FFA)
+            return player_id;
+        return team;
+    }
+
+    /*public int calcNetworkTeam(byte player_id) {
+        int team = 1;
+        if (player_id > MAX_PLAYER_ID)
+            return INVALID_PLAYER_ID;
+        if (mGameMode == GAME_MODE_2TEAMS) {
             final int x = ((MAX_PLAYER_ID + 1) / 2);
             if (player_id > x)
                 team = 2;
@@ -151,7 +172,34 @@ public class Globals {
         } else if (mGameMode == GAME_MODE_FFA)
             return player_id;
         return team;
-    }
+    }*/
+
+    /*    public int calcNetworkTeam(byte player_id) {
+        int team = 1;
+        if (player_id > MAX_PLAYER_ID)
+            return INVALID_PLAYER_ID;
+        if (mGameMode == GAME_MODE_2TEAMS || mGameMode == GAME_MODE_4TEAMS) {
+            if (player_id > 0)
+                team = 1;
+            if (player_id > 8)
+                team = 2;
+            if (player_id > 16)
+                team = 3;
+            if (player_id > 24)
+                team = 4;
+            if (player_id > 32)
+                team = 5;
+            if (player_id > 40)
+                team = 6;
+            if (player_id > 48)
+                team = 7;
+            if (player_id > 56)
+                team = 8;
+        } else if (mGameMode == GAME_MODE_FFA)
+            return player_id;
+        return team;
+    }*/
+
 
     public String getPlayerName(Byte playerID) {
         getmTeamPlayerNameSemaphore();

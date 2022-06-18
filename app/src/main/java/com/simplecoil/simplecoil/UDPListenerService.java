@@ -49,7 +49,7 @@ import javax.microedition.khronos.opengles.GL;
 public class UDPListenerService extends Service {
     private static final String TAG = "UDPSvc";
 
-    private static final Integer LISTEN_PORT = 17500;
+    public static final Integer LISTEN_PORT = 17500;
     private static final Integer LISTEN_TIMEOUT_MS = 1000;
     private static final int RECEIVE_BUFFER_SIZE = 500; // May need to increase if player count is above 16
 
@@ -59,7 +59,7 @@ public class UDPListenerService extends Service {
     WifiManager.MulticastLock multicastLock = null;
 
     private InetAddress mMyIP = null;
-    private InetAddress mBroadcastAddress = null;
+    public InetAddress mBroadcastAddress = null;
 
     private static volatile boolean mSendingMessage = false;
     private static volatile boolean keepListening = true;
@@ -490,7 +490,7 @@ public class UDPListenerService extends Service {
         sendThread.start();
     }
 
-    private void sendUDPMessage(final String message, final InetAddress ip, final Integer port) {
+    public void sendUDPMessage(final String message, final InetAddress ip, final Integer port) {
         Thread sendThread = new Thread(new Runnable() {
             public void run() {
                 try {
@@ -564,7 +564,7 @@ public class UDPListenerService extends Service {
 
     public void startGame() {
         mIsListService = false; // There is no list service while the game is running
-        sendUDPMessage(NetMsg.NETMSG_STARTGAME, mBroadcastAddress, LISTEN_PORT);
+        //sendUDPMessage(NetMsg.NETMSG_STARTGAME, mBroadcastAddress, LISTEN_PORT);
     }
 
     public void endGame() {
