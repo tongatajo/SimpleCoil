@@ -82,7 +82,7 @@ public class UDPListenerService extends Service {
         }
         mSocket.setSoTimeout(timeout);
         DatagramPacket packet = new DatagramPacket(recvBuf, recvBuf.length);
-        Log.d(TAG, "Waiting for UDP messages on " + ip.toString() + ":" + port);
+        //Log.d(TAG, "Waiting for UDP messages on " + ip.toString() + ":" + port);
         mReadyToScan++;
         doneListening = false;
         while (keepListening) {
@@ -91,7 +91,7 @@ public class UDPListenerService extends Service {
                 String senderIP = packet.getAddress().getHostAddress();
                 String message = new String(packet.getData()).trim();
                 message = message.substring(0, packet.getLength()); // If we don't do this, we get leftover garbage data
-                //Log.e(TAG, "Got UDB message len " + packet.getLength() + " from " + senderIP + ", message: " + message);
+                Log.i(TAG, "Got UDP message len " + packet.getLength() + " from " + senderIP + ", message: " + message);
                 processMessage(packet.getAddress(), message);
             } catch (SocketTimeoutException e) {
                 // do nothing
@@ -109,7 +109,6 @@ public class UDPListenerService extends Service {
             //Log.d(TAG, "IP matched so ignored");
             return;
         }
-        Log.i("CHRIS", message + " received");
         if (message.startsWith(NetMsg.MESSAGE_PREFIX)) {
             message = message.substring(NetMsg.MESSAGE_PREFIX.length());
             if (message.startsWith(NetMsg.NETMSG_SHOTFIRED)) {
