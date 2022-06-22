@@ -72,13 +72,13 @@ public class PlayerDisplayDataListAdapter extends ArrayAdapter<PlayerDisplayData
                 playerIDTV.setText("" + position);
                 break;
             case Globals.GAME_MODE_2TEAMS:
-                if (position > Globals.MAX_PLAYER_ID / 2)
-                    playerIDTV.setText("2-" + (position - (Globals.MAX_PLAYER_ID / 2)));
+                if (position > (Globals.MAX_PLAYER_ID + 1) / 8)
+                    playerIDTV.setText("2-" + (position - (Globals.MAX_PLAYER_ID + 1) / 8));
                 else
                     playerIDTV.setText("1-" + position);
                 break;
             case Globals.GAME_MODE_4TEAMS:
-                int playersPerTeam = Globals.MAX_PLAYER_ID / 4;
+                int playersPerTeam = (Globals.MAX_PLAYER_ID + 1) / 8;
                 if (position > playersPerTeam * 3)
                     playerIDTV.setText("4-" + (position - (playersPerTeam * 3)));
                 else if (position > playersPerTeam * 2)
