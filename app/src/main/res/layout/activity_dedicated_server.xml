@@ -60,9 +60,9 @@
             android:id="@+id/player_count_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:layout_marginStart="10dp"
             android:layout_below="@+id/server_ip_tv"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
             android:textAppearance="@android:style/TextAppearance.Material.Small.Inverse" />
 
         <Button
@@ -70,8 +70,8 @@
             style="@style/Widget.AppCompat.Button.Colored"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
             android:layout_below="@id/player_count_tv"
+            android:layout_marginStart="10dp"
             android:text="@string/game_mode_toggle_button" />
 
         <TextView
@@ -88,9 +88,9 @@
             style="@style/Widget.AppCompat.Button.Colored"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="10dp"
-            android:layout_alignParentEnd="true"
             android:layout_below="@id/player_count_tv"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="10dp"
             android:text="@string/game_limit_button" />
 
         <TextView
@@ -135,23 +135,35 @@
 
         <Switch
             android:id="@+id/allow_join_switch"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/gps_mode_button"
             android:layout_marginStart="10dp"
             android:layout_marginEnd="10dp"
+            android:checked="true"
             android:text="@string/dedicated_allow_join"
-            android:textColor="#FFFFFF"/>
+            android:textColor="#FFFFFF" />
 
         <Switch
             android:id="@+id/only_server_settings_switch"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/allow_join_switch"
             android:layout_marginStart="10dp"
             android:layout_marginEnd="10dp"
+            android:checked="true"
             android:text="@string/dedicated_server_settings_only"
-            android:textColor="#FFFFFF"/>
+            android:textColor="#FFFFFF" />
+
+        <Button
+            android:id="@+id/manage_flags_button"
+            style="@style/Widget.AppCompat.Button.Colored"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/gps_mode_button"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="10dp"
+            android:text="@string/manage_flags_button" />
 
         <ListView
             android:id="@+id/player_list"

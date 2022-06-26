@@ -31,19 +31,19 @@ public class Globals {
     be used but would require code changes to the hit detection if you really need 64 players. */
     public static final byte MAX_PLAYER_ID = (byte) 0x3F;
 
-    public static final byte RELOAD_COUNT = (byte) 30; // Number of shots you get after a reload, max 255
+    public static final byte RELOAD_COUNT = (byte) 10; // Number of shots you get after a reload, max 255
     public volatile byte mFullReload = RELOAD_COUNT;
     public static final long RESPAWN_TIME_SECONDS = 10; // Time to wait for respawn after elimination and to start the game
     public volatile long mRespawnTime = RESPAWN_TIME_SECONDS;
     public static final long RELOAD_TIME_MILLISECONDS = 1500; // Reload downtime in ms. 1.5 seconds
     public volatile long mReloadTime = RELOAD_TIME_MILLISECONDS;
-    public static final int MAX_HEALTH = 20; // Number of hits you can take before you are eliminated
+    public static final int MAX_HEALTH = 15; // Number of hits you can take before you are eliminated
     public volatile int mFullHealth = MAX_HEALTH;
     public static final int DAMAGE_PER_HIT = -1;
     public volatile int mDamage = DAMAGE_PER_HIT;
     public volatile boolean mOverrideLives = false;
     public volatile int mOverrideLivesVal = 0;
-    public volatile boolean mAllowPlayerSettings = true;
+    public volatile boolean mAllowPlayerSettings = false;
     public volatile boolean mReloadOnEmpty = false; // Primarily intended for instagib
 
     public static final int INVALID_PLAYER_ID = -100;
@@ -53,7 +53,7 @@ public class Globals {
     public static final int GAME_MODE_FFA = 1;
     public static final int GAME_MODE_2TEAMS = 2;
     public static final int GAME_MODE_4TEAMS = 4;
-    public volatile int mGameMode = GAME_MODE_2TEAMS;
+    public volatile int mGameMode = GAME_MODE_4TEAMS;
 
     public static final int GAME_LIMIT_NONE = 0;
     public static final int GAME_LIMIT_TIME = 1;
@@ -78,8 +78,8 @@ public class Globals {
     public static final int SHOT_MODE_SINGLE = 2;
     public static final int SHOT_MODE_BURST = 4;
     public volatile boolean mAllowSingleShotMode = true;
-    public volatile boolean mAllowBurst3ShotMode = true;
-    public volatile boolean mAllowAutoShotMode = true;
+    public volatile boolean mAllowBurst3ShotMode = false;
+    public volatile boolean mAllowAutoShotMode = false;
 
     public static final int FIRING_MODE_OUTDOOR_NO_CONE = 0;
     public static final int FIRING_MODE_OUTDOOR_WITH_CONE = 1;
@@ -105,7 +105,7 @@ public class Globals {
     public Semaphore mPlayerSettingsSemaphore;
     public Semaphore mGrenadePairingsSemaphore;
     public volatile boolean mUseGPS = false;
-    public volatile boolean mOnlyServerSettings = false;
+    public volatile boolean mOnlyServerSettings = true;
 
     public volatile long mServerGameTimeRemaining = 0; // in seconds
 
@@ -152,53 +152,6 @@ public class Globals {
             return player_id;
         return team;
     }
-
-    /*public int calcNetworkTeam(byte player_id) {
-        int team = 1;
-        if (player_id > MAX_PLAYER_ID)
-            return INVALID_PLAYER_ID;
-        if (mGameMode == GAME_MODE_2TEAMS) {
-            final int x = ((MAX_PLAYER_ID + 1) / 2);
-            if (player_id > x)
-                team = 2;
-        } else if (mGameMode == GAME_MODE_4TEAMS){
-            final int x = ((MAX_PLAYER_ID + 1) / 4);
-            if (player_id > 3 * x)
-                team = 4;
-            else if (player_id > 2 * x)
-                team = 3;
-            else if (player_id > x)
-                team = 2;
-        } else if (mGameMode == GAME_MODE_FFA)
-            return player_id;
-        return team;
-    }*/
-
-    /*    public int calcNetworkTeam(byte player_id) {
-        int team = 1;
-        if (player_id > MAX_PLAYER_ID)
-            return INVALID_PLAYER_ID;
-        if (mGameMode == GAME_MODE_2TEAMS || mGameMode == GAME_MODE_4TEAMS) {
-            if (player_id > 0)
-                team = 1;
-            if (player_id > 8)
-                team = 2;
-            if (player_id > 16)
-                team = 3;
-            if (player_id > 24)
-                team = 4;
-            if (player_id > 32)
-                team = 5;
-            if (player_id > 40)
-                team = 6;
-            if (player_id > 48)
-                team = 7;
-            if (player_id > 56)
-                team = 8;
-        } else if (mGameMode == GAME_MODE_FFA)
-            return player_id;
-        return team;
-    }*/
 
 
     public String getPlayerName(Byte playerID) {
@@ -349,8 +302,8 @@ public class Globals {
         boolean overrideLives = false;
         int lives = 0;
         boolean allowShotModeSingle = true;
-        boolean allowShotModeBurst3 = true;
-        boolean allowShotModeAuto = true;
+        boolean allowShotModeBurst3 = false;
+        boolean allowShotModeAuto = false;
         int firingMode = FIRING_MODE_OUTDOOR_NO_CONE;
     }
 }

@@ -73,6 +73,7 @@ public class DedicatedServerActivity extends AppCompatActivity implements PopupM
     private Button mGPSModeButton = null;
     private Button mEndGameButton = null;
     private Button mStartGameButton = null;
+    private Button mManageFlagsButton = null;
     private TextView mGameLimitTV = null;
     private TextView mGameStatusTV = null;
     private Switch mAllowJoinSwitch = null;
@@ -200,6 +201,15 @@ public class DedicatedServerActivity extends AppCompatActivity implements PopupM
                     startGame();
                     mUDPListenerService.sendUDPMessage(NetMsg.MESSAGE_PREFIX + NetMsg.NETMSG_STARTGAME, mUDPListenerService.mBroadcastAddress, mUDPListenerService.LISTEN_PORT);
                 }
+            }));
+        }
+        mManageFlagsButton = findViewById(R.id.manage_flags_button);
+        if (mManageFlagsButton != null) {
+            mManageFlagsButton.setOnClickListener((new View.OnClickListener() {
+                public void onClick(View v) {
+                    mUDPListenerService.sendUDPMessage(NetMsg.MESSAGE_PREFIX + NetMsg.NETMSG_FLAGRESET, mUDPListenerService.mBroadcastAddress, mUDPListenerService.LISTEN_PORT);
+                }
+
             }));
         }
         sharedPreferences = getSharedPreferences(FullscreenActivity.PREF_NAME, Context.MODE_PRIVATE);
