@@ -30,7 +30,7 @@ public class NetMsg {
     public static final String NETMSG_LEAVE = "LEAVE";
     public static final String NETMSG_STARTGAME = "STARTGAME";
     public static final String NETMSG_ENDGAME = "ENDGAME";
-    public static final String NETMSG_FLAGRESET = "NETMSG_FLAGRESET";
+    public static final String NETMSG_FLAGRESET = "FLAGRESET";
     public static final String NETMSG_ERROR = "ERROR";
     public static final String NETMSG_FAILEDTOJOIN = "FAILEDTOJOIN";
     public static final String NETMSG_VERSIONERROR = "VERSIONERROR";
