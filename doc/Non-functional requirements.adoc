@@ -1,0 +1,21 @@
+== Non-functional requirements
+:AUTHORS: Andre West, Christian Lemke
+{authors}
+
+Non-functional requirements are defined by:
+
+. ID: NFR.<number>
+. Status: <draft|confirmed|rejected|implemented>
+. Description: Specific description of the requirement
+
+[%header,format=dsv, separator=;, width=90%, grid=all]
+|===
+ID;Status;Description
+NFR.01;draft;The server must be able to control all devices (gamestart, gamestop)
+NFR.02;draft;A common network protocol is required
+NFR.03;draft;The server will manage team-assignments and player-ids
+NFR.04;draft;Starting devices will automatically register with a running server
+NFR.05;draft;Team-assignment changes have to be easily done via drag and drop
+NFR.06;draft;Game-modes must be easily implementable with a modular system (i.e. via YAML files)
+NFR.07;draft;The server will assign all relevant game parameters to all devices, there is no need to configure single client devices
+|===

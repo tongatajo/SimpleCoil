@@ -1,0 +1,60 @@
+== Protocol Interface Design
+:AUTHORS: Andre West, Christian Lemke
+{authors}
+
+
+. The communication is based on SimpleCoil and has been extended with additional use-cases.
+. TCP and UDP are used for different purposes.
+. All messages sent and received are using the message prefix "SimpleCoil:".
+. General messages are defined as static Strings in the format "NETMSG_<name>".
+. Server updates are defined as "INTENT_"
+
+
+IMPORTANT: Do we want to have the network version in the packets? This does only make sense assuming different versions will be playing together. In case all are on the latest version there's no need.
+
+Here is an overview of the origial SimpleCoil messages:
+
+[%header,format=dsv, separator=;, width=90%, grid=all]
+|===
+Constant;Message;Description
+
+NETMSG_SHOTFIRED;SHOTFIRED;
+NETMSG_HIT;HIT;
+NETMSG_OUT;OUT;
+NETMSG_ELIMINATED;ELIMINATED;
+NETMSG_LEAVE;LEAVE;
+NETMSG_STARTGAME;STARTGAME;
+NETMSG_ENDGAME;ENDGAME;
+NETMSG_ERROR;ERROR";
+NETMSG_FAILEDTOJOIN;FAILEDTOJOIN;
+NETMSG_VERSIONERROR;VERSIONERROR;
+NETMSG_SAMETEAM;SAMETEAM;
+NETMSG_SERVERCREATED;SERVERCREATED;
+NETMSG_SERVERCANCEL;SERVERCANCEL;
+NETMSG_TEAMELIMINATED;TEAMELIMINATED;
+NETMSG_SERVERREPLY;SERVERREPLY;
+NETMSG_GPSLOCUPDATE;GPSLOCUPDATE;
+NETMSG_GPSDATAUPDATE;GPSDATAUPDATE;
+NETMSG_GPSSETTING;GPSSETTING;
+NETMSG_PLAYERDATAUPDATE;PLAYERDATAUPDATE;
+NETMSG_PLAYERDATAREQUEST;PLAYERDATAREQUEST;
+NETMSG_NETWORKCONNECTED;NETWORKCONNECTED;
+NETMSG_NETWORKDISCONNECTED;NETWORKDISCONNECTED;
+NETMSG_PLAYERSETTINGSUPDATE;PLAYERSETTINGSUPDATE;
+NETMSG_JOIN;JOIN;UDPJOIN is UDPJOIN + playerID, so UDPJOIN2 for playerID 2 +
+NETMSG_LISTPLAYERS;LISTPLAYERS;
+NETMSG_FLAGRESET;FLAGRESET;Protocol extension for digital flags
+INTENT_HASGAMEUPDATE;HASGAMEUPDATE;
+INTENT_SCORE;SCORE;
+INTENT_TEAMSCORE;TEAMSCORE;
+INTENT_ELIMINATIONS;ELIMINATIONS;
+INTENT_TIMEREMAINING;TIMEREMAINING;
+INTENT_GAMESTATE;GAMESTATE;
+INTENT_LONGITUDE;longitude;
+INTENT_LATITUDE;latitude;
+INTENT_FULLUPDATE;fullupdate;
+INTENT_PLAYERDATA;playerdata;
+|===
+
+
+
