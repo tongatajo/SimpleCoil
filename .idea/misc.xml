@@ -35,7 +35,7 @@
         <entry key="..\:/Workplace/Projekte/22-02 SimpleCoil/SimpleCoil/app/src/main/res/drawable/ic_person_red_50dp.xml" value="0.1935" />
         <entry key="..\:/Workplace/Projekte/22-02 SimpleCoil/SimpleCoil/app/src/main/res/drawable/ic_zoom_out_map_yellow_50dp.xml" value="0.1935" />
         <entry key="..\:/Workplace/Projekte/22-02 SimpleCoil/SimpleCoil/app/src/main/res/layout-land/activity_fullscreen.xml" value="0.15696649029982362" />
-        <entry key="..\:/Workplace/Projekte/22-02 SimpleCoil/SimpleCoil/app/src/main/res/layout/activity_dedicated_server.xml" value="0.5" />
+        <entry key="..\:/Workplace/Projekte/22-02 SimpleCoil/SimpleCoil/app/src/main/res/layout/activity_dedicated_server.xml" value="0.33" />
         <entry key="..\:/Workplace/Projekte/22-02 SimpleCoil/SimpleCoil/app/src/main/res/layout/activity_fullscreen.xml" value="0.33" />
         <entry key="..\:/Workplace/Projekte/22-02 SimpleCoil/SimpleCoil/app/src/main/res/layout/blaster_disconnected_dialog.xml" value="0.18541666666666667" />
         <entry key="..\:/Workplace/Projekte/22-02 SimpleCoil/SimpleCoil/app/src/main/res/layout/game_limit_dialog.xml" value="0.18541666666666667" />
@@ -46,7 +46,7 @@
         <entry key="..\:/Workplace/Projekte/22-02 SimpleCoil/SimpleCoil/app/src/main/res/layout/player_settings_dialog.xml" value="0.18541666666666667" />
         <entry key="..\:/Workplace/Projekte/22-02 SimpleCoil/SimpleCoil/app/src/main/res/layout/server_ip_dialog.xml" value="0.18541666666666667" />
         <entry key="..\:/Workplace/Projekte/22-02 SimpleCoil/SimpleCoil/app/src/main/res/menu/firing_mode_menu.xml" value="0.18541666666666667" />
-        <entry key="..\:/Workplace/Projekte/22-02 SimpleCoil/SimpleCoil/app/src/main/res/menu/game_mode_menu.xml" value="0.18541666666666667" />
+        <entry key="..\:/Workplace/Projekte/22-02 SimpleCoil/SimpleCoil/app/src/main/res/menu/game_mode_menu.xml" value="0.33" />
         <entry key="..\:/Workplace/Projekte/22-02 SimpleCoil/SimpleCoil/app/src/main/res/menu/gps_mode_menu.xml" value="0.18541666666666667" />
         <entry key="..\:/Workplace/Projekte/22-02 SimpleCoil/SimpleCoil/app/src/main/res/menu/network_menu.xml" value="0.18541666666666667" />
         <entry key="..\:/Workplace/Projekte/22-02 SimpleCoil/SimpleCoil/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.2395" />
@@ -95,7 +95,7 @@
       </value>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

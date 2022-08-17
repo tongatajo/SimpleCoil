@@ -43,7 +43,7 @@ public class Globals {
     public volatile int mDamage = DAMAGE_PER_HIT;
     public volatile boolean mOverrideLives = false;
     public volatile int mOverrideLivesVal = 0;
-    public volatile boolean mAllowPlayerSettings = false;
+    public volatile boolean mAllowPlayerSettings = true;
     public volatile boolean mReloadOnEmpty = false; // Primarily intended for instagib
 
     public static final int INVALID_PLAYER_ID = -100;
@@ -52,8 +52,13 @@ public class Globals {
     // 1 for FFA, 2 for 2 Teams, and 4 for 4 Teams
     public static final int GAME_MODE_FFA = 1;
     public static final int GAME_MODE_2TEAMS = 2;
+    public static final int GAME_MODE_3TEAMS = 3;
     public static final int GAME_MODE_4TEAMS = 4;
-    public volatile int mGameMode = GAME_MODE_4TEAMS;
+    public static final int GAME_MODE_5TEAMS = 5;
+    public static final int GAME_MODE_6TEAMS = 6;
+    public static final int GAME_MODE_7TEAMS = 7;
+    public static final int GAME_MODE_8TEAMS = 8;
+    public volatile int mGameMode = GAME_MODE_2TEAMS;
 
     public static final int GAME_LIMIT_NONE = 0;
     public static final int GAME_LIMIT_TIME = 1;

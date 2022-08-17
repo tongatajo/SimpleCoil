@@ -309,9 +309,23 @@ public class DedicatedServerActivity extends AppCompatActivity implements PopupM
     @Override
     public boolean onMenuItemClick(MenuItem item) {
         switch (item.getItemId()) {
+            case R.id.game_mode_ffa_item:
+                Globals.getInstance().mGameMode = Globals.GAME_MODE_FFA;
+                mGameModeButton.setText(R.string.game_mode_ffa);
+                savePreference(FullscreenActivity.PREF_GAME_MODE, Globals.getInstance().mGameMode);
+                setGPSMode(Globals.getInstance().mGPSMode);
+                getPlayerDisplayData();
+                return true;
             case R.id.game_mode_2teams_item:
                 Globals.getInstance().mGameMode = Globals.GAME_MODE_2TEAMS;
                 mGameModeButton.setText(R.string.game_mode_2teams);
+                savePreference(FullscreenActivity.PREF_GAME_MODE, Globals.getInstance().mGameMode);
+                setGPSMode(Globals.getInstance().mGPSMode);
+                getPlayerDisplayData();
+                return true;
+            case R.id.game_mode_3teams_item:
+                Globals.getInstance().mGameMode = Globals.GAME_MODE_3TEAMS;
+                mGameModeButton.setText(R.string.game_mode_3teams);
                 savePreference(FullscreenActivity.PREF_GAME_MODE, Globals.getInstance().mGameMode);
                 setGPSMode(Globals.getInstance().mGPSMode);
                 getPlayerDisplayData();
@@ -323,9 +337,30 @@ public class DedicatedServerActivity extends AppCompatActivity implements PopupM
                 setGPSMode(Globals.getInstance().mGPSMode);
                 getPlayerDisplayData();
                 return true;
-            case R.id.game_mode_ffa_item:
-                Globals.getInstance().mGameMode = Globals.GAME_MODE_FFA;
-                mGameModeButton.setText(R.string.game_mode_ffa);
+            case R.id.game_mode_5teams_item:
+                Globals.getInstance().mGameMode = Globals.GAME_MODE_5TEAMS;
+                mGameModeButton.setText(R.string.game_mode_5teams);
+                savePreference(FullscreenActivity.PREF_GAME_MODE, Globals.getInstance().mGameMode);
+                setGPSMode(Globals.getInstance().mGPSMode);
+                getPlayerDisplayData();
+                return true;
+            case R.id.game_mode_6teams_item:
+                Globals.getInstance().mGameMode = Globals.GAME_MODE_6TEAMS;
+                mGameModeButton.setText(R.string.game_mode_6teams);
+                savePreference(FullscreenActivity.PREF_GAME_MODE, Globals.getInstance().mGameMode);
+                setGPSMode(Globals.getInstance().mGPSMode);
+                getPlayerDisplayData();
+                return true;
+            case R.id.game_mode_7teams_item:
+                Globals.getInstance().mGameMode = Globals.GAME_MODE_7TEAMS;
+                mGameModeButton.setText(R.string.game_mode_7teams);
+                savePreference(FullscreenActivity.PREF_GAME_MODE, Globals.getInstance().mGameMode);
+                setGPSMode(Globals.getInstance().mGPSMode);
+                getPlayerDisplayData();
+                return true;
+            case R.id.game_mode_8teams_item:
+                Globals.getInstance().mGameMode = Globals.GAME_MODE_8TEAMS;
+                mGameModeButton.setText(R.string.game_mode_8teams);
                 savePreference(FullscreenActivity.PREF_GAME_MODE, Globals.getInstance().mGameMode);
                 setGPSMode(Globals.getInstance().mGPSMode);
                 getPlayerDisplayData();

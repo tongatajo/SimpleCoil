@@ -72,14 +72,87 @@ public class PlayerDisplayDataListAdapter extends ArrayAdapter<PlayerDisplayData
                 playerIDTV.setText("" + position);
                 break;
             case Globals.GAME_MODE_2TEAMS:
-                if (position > (Globals.MAX_PLAYER_ID + 1) / 8)
-                    playerIDTV.setText("2-" + (position - (Globals.MAX_PLAYER_ID + 1) / 8));
+                if (position > Globals.MAX_PLAYER_ID / 2)
+                    playerIDTV.setText("2-" + (position - (Globals.MAX_PLAYER_ID / 2)));
+                else
+                    playerIDTV.setText("1-" + position);
+                break;
+            case Globals.GAME_MODE_3TEAMS:
+                int playersPerTeam = 21;
+                if (position > playersPerTeam * 2)
+                    playerIDTV.setText("3-" + (position - (playersPerTeam * 2)));
+                else if (position > playersPerTeam * 1)
+                    playerIDTV.setText("2-" + (position - (playersPerTeam * 1)));
                 else
                     playerIDTV.setText("1-" + position);
                 break;
             case Globals.GAME_MODE_4TEAMS:
-                int playersPerTeam = (Globals.MAX_PLAYER_ID + 1) / 8;
+                playersPerTeam = Globals.MAX_PLAYER_ID / 4;
                 if (position > playersPerTeam * 3)
+                    playerIDTV.setText("4-" + (position - (playersPerTeam * 3)));
+                else if (position > playersPerTeam * 2)
+                    playerIDTV.setText("3-" + (position - (playersPerTeam * 2)));
+                else if (position > playersPerTeam)
+                    playerIDTV.setText("2-" + (position - playersPerTeam));
+                else
+                    playerIDTV.setText("1-" + position);
+                break;
+            case Globals.GAME_MODE_5TEAMS:
+                playersPerTeam = 12;
+                if (position > playersPerTeam * 4)
+                    playerIDTV.setText("5-" + (position - (playersPerTeam * 4)));
+                else if (position > playersPerTeam * 3)
+                    playerIDTV.setText("4-" + (position - (playersPerTeam * 3)));
+                else if (position > playersPerTeam * 2)
+                    playerIDTV.setText("3-" + (position - (playersPerTeam * 2)));
+                else if (position > playersPerTeam)
+                    playerIDTV.setText("2-" + (position - playersPerTeam));
+                else
+                    playerIDTV.setText("1-" + position);
+                break;
+            case Globals.GAME_MODE_6TEAMS:
+                playersPerTeam = 10;
+                if (position > playersPerTeam * 5)
+                    playerIDTV.setText("6-" + (position - (playersPerTeam * 5)));
+                else if (position > playersPerTeam * 4)
+                    playerIDTV.setText("5-" + (position - (playersPerTeam * 4)));
+                else if (position > playersPerTeam * 3)
+                    playerIDTV.setText("4-" + (position - (playersPerTeam * 3)));
+                else if (position > playersPerTeam * 2)
+                    playerIDTV.setText("3-" + (position - (playersPerTeam * 2)));
+                else if (position > playersPerTeam)
+                    playerIDTV.setText("2-" + (position - playersPerTeam));
+                else
+                    playerIDTV.setText("1-" + position);
+                break;
+            case Globals.GAME_MODE_7TEAMS:
+                playersPerTeam = 9;
+                if (position > playersPerTeam * 6)
+                    playerIDTV.setText("7-" + (position - (playersPerTeam * 6)));
+                else if (position > playersPerTeam * 5)
+                    playerIDTV.setText("6-" + (position - (playersPerTeam * 5)));
+                else if (position > playersPerTeam * 4)
+                    playerIDTV.setText("5-" + (position - (playersPerTeam * 4)));
+                else if (position > playersPerTeam * 3)
+                    playerIDTV.setText("4-" + (position - (playersPerTeam * 3)));
+                else if (position > playersPerTeam * 2)
+                    playerIDTV.setText("3-" + (position - (playersPerTeam * 2)));
+                else if (position > playersPerTeam)
+                    playerIDTV.setText("2-" + (position - playersPerTeam));
+                else
+                    playerIDTV.setText("1-" + position);
+                break;
+            case Globals.GAME_MODE_8TEAMS:
+                playersPerTeam = 7;
+                if (position > playersPerTeam * 7)
+                    playerIDTV.setText("8-" + (position - (playersPerTeam * 7)));
+                else if (position > playersPerTeam * 6)
+                    playerIDTV.setText("7-" + (position - (playersPerTeam * 6)));
+                else if (position > playersPerTeam * 5)
+                    playerIDTV.setText("6-" + (position - (playersPerTeam * 5)));
+                else if (position > playersPerTeam * 4)
+                    playerIDTV.setText("5-" + (position - (playersPerTeam * 4)));
+                else if (position > playersPerTeam * 3)
                     playerIDTV.setText("4-" + (position - (playersPerTeam * 3)));
                 else if (position > playersPerTeam * 2)
                     playerIDTV.setText("3-" + (position - (playersPerTeam * 2)));
