@@ -67,7 +67,7 @@
     <string name="server_status_connected_to">Connected to %1$s</string>
     <string name="server_status_searching">Searching for server&#8230;</string>
 
-    <string name="use_network_button">Enable Networking</string>
+    <string name="use_network_button">Enable Network</string>
     <string name="network_menu_button">Network Options</string>
     <string name="no_network_button">Disable Network</string>
     <string name="ready_button">Join Lobby</string>
@@ -78,7 +78,7 @@
     <string name="cancel_server_button">Cancel Lobby</string>
     <string name="join_ip_button">Join IP&#8230;</string>
     <string name="player_name_button">Player Name: %1$s</string>
-    <string name="game_mode_toggle_button">Set Game Mode</string>
+    <string name="game_mode_toggle_button">Game Mode</string>
     <string name="game_mode_label">Game Mode</string>
     <string name="game_mode_ffa">Free For All</string>
     <string name="game_mode_2teams">2 Teams</string>
@@ -118,11 +118,11 @@
     <string name="dedicated_game_running">Game Running</string>
     <string name="dedicated_game_waiting">Waiting to Start</string>
     <string name="dedicated_allow_join">Allow join after game start?</string>
-    <string name="dedicated_server_settings_only">Allow only server settings?</string>
-    <string name="manage_flags_button">Manage Flags</string>
-    <string name="gps_mode_disabled">GPS Disabled</string>
-    <string name="gps_mode_teammate">GPS Teammates Only</string>
-    <string name="gps_mode_all">GPS All Enabled</string>
+    <string name="dedicated_server_settings_only">Allow only server settings ?</string>
+    <string name="manage_flags_button">Reset Flags</string>
+    <string name="gps_mode_disabled">GPS Options</string>
+    <string name="gps_mode_teammate">See Teammates Only</string>
+    <string name="gps_mode_all">See All Players</string>
     <string name="player_name_not_connected">{Not Connected}</string>
     <string name="scoreboard_button">Scoreboard</string>
 

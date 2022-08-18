@@ -4,13 +4,23 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Android-Projekte/SimpleCoil/app/src/main/res/drawable/hit_animation.xml" value="0.186" />
+        <entry key="..\:/Android-Projekte/SimpleCoil/app/src/main/res/drawable/hit_other_player_animation.xml" value="0.1835" />
+        <entry key="..\:/Android-Projekte/SimpleCoil/app/src/main/res/drawable/hit_other_player_out_animation.xml" value="0.1835" />
+        <entry key="..\:/Android-Projekte/SimpleCoil/app/src/main/res/drawable/ic_add_circle_green_50dp.xml" value="0.1835" />
+        <entry key="..\:/Android-Projekte/SimpleCoil/app/src/main/res/drawable/ic_battery_50_yellow_24dp.xml" value="0.1835" />
+        <entry key="..\:/Android-Projekte/SimpleCoil/app/src/main/res/drawable/ic_battery_80_blue_24dp.xml" value="0.1835" />
+        <entry key="..\:/Android-Projekte/SimpleCoil/app/src/main/res/drawable/ic_battery_alert_red_24dp.xml" value="0.1835" />
+        <entry key="..\:/Android-Projekte/SimpleCoil/app/src/main/res/drawable/ic_battery_full_green_24dp.xml" value="0.1835" />
+        <entry key="..\:/Android-Projekte/SimpleCoil/app/src/main/res/drawable/ic_error_red_100dp.xml" value="0.1835" />
+        <entry key="..\:/Android-Projekte/SimpleCoil/app/src/main/res/drawable/ic_error_yellow_100dp.xml" value="0.1835" />
+        <entry key="..\:/Android-Projekte/SimpleCoil/app/src/main/res/drawable/ic_flare_red_50dp.xml" value="0.1835" />
         <entry key="..\:/Android-Projekte/SimpleCoil/app/src/main/res/drawable/ic_network_connected_24dp.xml" value="0.186" />
         <entry key="..\:/Android-Projekte/SimpleCoil/app/src/main/res/drawable/ic_network_disconnected_24dp.xml" value="0.186" />
         <entry key="..\:/Android-Projekte/SimpleCoil/app/src/main/res/drawable/ic_person_red_50dp.xml" value="0.186" />
         <entry key="..\:/Android-Projekte/SimpleCoil/app/src/main/res/drawable/ic_person_yellow_50dp.xml" value="0.186" />
         <entry key="..\:/Android-Projekte/SimpleCoil/app/src/main/res/drawable/ic_zoom_out_map_red_50dp.xml" value="0.186" />
         <entry key="..\:/Android-Projekte/SimpleCoil/app/src/main/res/drawable/ic_zoom_out_map_yellow_50dp.xml" value="0.186" />
-        <entry key="..\:/Android-Projekte/SimpleCoil/app/src/main/res/layout/activity_dedicated_server.xml" value="0.18802083333333333" />
+        <entry key="..\:/Android-Projekte/SimpleCoil/app/src/main/res/layout/activity_dedicated_server.xml" value="0.33" />
         <entry key="..\:/Android-Projekte/SimpleCoil/app/src/main/res/layout/activity_fullscreen.xml" value="0.25" />
         <entry key="..\:/Android-Projekte/SimpleCoil/app/src/main/res/layout/blaster_disconnected_dialog.xml" value="0.17831813576494426" />
         <entry key="..\:/Android-Projekte/SimpleCoil/app/src/main/res/layout/game_limit_dialog.xml" value="0.17831813576494426" />
