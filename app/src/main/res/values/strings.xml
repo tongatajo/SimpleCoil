@@ -101,6 +101,7 @@
     <string name="game_limit_time">Time in minutes</string>
     <string name="game_limit_lives">Lives</string>
     <string name="game_limit_score">Score</string>
+    <string name="game_limit_flag">Flag</string>
 
     <string name="please_wait">Please Wait</string>
 

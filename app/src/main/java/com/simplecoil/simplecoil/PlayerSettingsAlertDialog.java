@@ -85,6 +85,12 @@ public class PlayerSettingsAlertDialog extends AlertDialog implements PopupMenu.
                 else
                     mTitleTV.setText(mContext.getString(R.string.player_settings_team_title, 1, mPlayerID));
                 break;
+            case Globals.GAME_MODE_3TEAMS:
+                if (mPlayerID > 21)
+                    mTitleTV.setText(mContext.getString(R.string.player_settings_team_title, 2, (mPlayerID - (21))));
+                else
+                    mTitleTV.setText(mContext.getString(R.string.player_settings_team_title, 1, mPlayerID));
+                break;
             case Globals.GAME_MODE_4TEAMS:
                 int playersPerTeam = Globals.MAX_PLAYER_ID / 4;
                 if (mPlayerID > playersPerTeam * 3)

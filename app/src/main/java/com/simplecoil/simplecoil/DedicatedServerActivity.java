@@ -412,12 +412,15 @@ public class DedicatedServerActivity extends AppCompatActivity implements PopupM
         gameLimitLives.setChecked(false);
         final RadioButton gameLimitScore = view.findViewById(R.id.game_limit_score_radio);
         gameLimitScore.setChecked(false);
+        final RadioButton gameLimitFlag = view.findViewById(R.id.game_limit_flag_radio);
+        gameLimitFlag.setChecked(false);
         gameLimitScore.setVisibility(View.VISIBLE);;
         gameLimitTime.setOnClickListener((new View.OnClickListener() {
             public void onClick(View v) {
                 gameLimitTime.setChecked(true);
                 gameLimitLives.setChecked(false);
                 gameLimitScore.setChecked(false);
+                gameLimitFlag.setChecked(false);
             }
         }));
         gameLimitLives.setOnClickListener((new View.OnClickListener() {
@@ -425,6 +428,7 @@ public class DedicatedServerActivity extends AppCompatActivity implements PopupM
                 gameLimitTime.setChecked(false);
                 gameLimitLives.setChecked(true);
                 gameLimitScore.setChecked(false);
+                gameLimitFlag.setChecked(false);
             }
         }));
         gameLimitScore.setOnClickListener((new View.OnClickListener() {
@@ -432,6 +436,15 @@ public class DedicatedServerActivity extends AppCompatActivity implements PopupM
                 gameLimitTime.setChecked(false);
                 gameLimitLives.setChecked(false);
                 gameLimitScore.setChecked(true);
+                gameLimitFlag.setChecked(false);
+            }
+        }));
+        gameLimitFlag.setOnClickListener((new View.OnClickListener() {
+            public void onClick(View v) {
+                gameLimitTime.setChecked(false);
+                gameLimitLives.setChecked(false);
+                gameLimitScore.setChecked(false);
+                gameLimitFlag.setChecked(true);
             }
         }));
 
@@ -468,6 +481,12 @@ public class DedicatedServerActivity extends AppCompatActivity implements PopupM
                                     else if (limit <= 0)
                                         Globals.getInstance().mGameLimit -= Globals.GAME_LIMIT_LIVES;
                                     Globals.getInstance().mLivesLimit = limit;
+                                } else if (gameLimitFlag.isChecked()) {
+                                    if ((Globals.getInstance().mGameLimit & Globals.GAME_LIMIT_FLAG) == 0)
+                                        Globals.getInstance().mGameLimit += Globals.GAME_LIMIT_FLAG;
+                                    else if (limit <= 0)
+                                        Globals.getInstance().mGameLimit -= Globals.GAME_LIMIT_FLAG;
+                                    Globals.getInstance().mFlagLimit = limit;
                                 } else {
                                     if ((Globals.getInstance().mGameLimit & Globals.GAME_LIMIT_SCORE) == 0)
                                         Globals.getInstance().mGameLimit += Globals.GAME_LIMIT_SCORE;

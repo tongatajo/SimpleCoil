@@ -1298,20 +1298,78 @@ public class FullscreenActivity extends AppCompatActivity implements PopupMenu.O
             mTeamTV.setText(R.string.no_team);
         } else if (mUseNetwork && Globals.getInstance().mGameMode != Globals.GAME_MODE_FFA) {
             mNetworkTeam = 1;
-            int x = ((Globals.MAX_PLAYER_ID + 1) / 8);
+            int x = ((Globals.MAX_PLAYER_ID + 1) / 2);
             if (Globals.getInstance().mGameMode == Globals.GAME_MODE_2TEAMS) {
                 if (Globals.getInstance().mPlayerID > x)
                     mNetworkTeam = 2;
-            } else {
-                x = ((Globals.MAX_PLAYER_ID + 1) / 8);
+            } else if (Globals.getInstance().mGameMode == Globals.GAME_MODE_3TEAMS) {
+                x = 21;
+                if (Globals.getInstance().mPlayerID > 2 * x)
+                    mNetworkTeam = 3;
+                else if (Globals.getInstance().mPlayerID > x)
+                    mNetworkTeam = 2;
+            } else if (Globals.getInstance().mGameMode == Globals.GAME_MODE_4TEAMS) {
+                x = ((Globals.MAX_PLAYER_ID + 1) / 4);
                 if (Globals.getInstance().mPlayerID > 3 * x)
                     mNetworkTeam = 4;
                 else if (Globals.getInstance().mPlayerID > 2 * x)
                     mNetworkTeam = 3;
                 else if (Globals.getInstance().mPlayerID > x)
                     mNetworkTeam = 2;
+            } else if (Globals.getInstance().mGameMode == Globals.GAME_MODE_5TEAMS) {
+                x = 12;
+                if (Globals.getInstance().mPlayerID > 4 * x)
+                    mNetworkTeam = 5;
+                else if (Globals.getInstance().mPlayerID > 3 * x)
+                    mNetworkTeam = 4;
+                else if (Globals.getInstance().mPlayerID > 2 * x)
+                    mNetworkTeam = 3;
+                else if (Globals.getInstance().mPlayerID > x)
+                    mNetworkTeam = 2;
+            } else if (Globals.getInstance().mGameMode == Globals.GAME_MODE_6TEAMS) {
+                x = 10;
+                if (Globals.getInstance().mPlayerID > 5 * x)
+                    mNetworkTeam = 6;
+                else if (Globals.getInstance().mPlayerID > 4 * x)
+                    mNetworkTeam = 5;
+                else if (Globals.getInstance().mPlayerID > 3 * x)
+                    mNetworkTeam = 4;
+                else if (Globals.getInstance().mPlayerID > 2 * x)
+                    mNetworkTeam = 3;
+                else if (Globals.getInstance().mPlayerID > x)
+                    mNetworkTeam = 2;
+            } else if (Globals.getInstance().mGameMode == Globals.GAME_MODE_7TEAMS) {
+                x = 9;
+                if (Globals.getInstance().mPlayerID > 6 * x)
+                    mNetworkTeam = 7;
+                else if (Globals.getInstance().mPlayerID > 5 * x)
+                    mNetworkTeam = 6;
+                else if (Globals.getInstance().mPlayerID > 4 * x)
+                    mNetworkTeam = 5;
+                else if (Globals.getInstance().mPlayerID > 3 * x)
+                    mNetworkTeam = 4;
+                else if (Globals.getInstance().mPlayerID > 2 * x)
+                    mNetworkTeam = 3;
+                else if (Globals.getInstance().mPlayerID > x)
+                    mNetworkTeam = 2;
+            } else if (Globals.getInstance().mGameMode == Globals.GAME_MODE_8TEAMS) {
+                x = 8;
+                if (Globals.getInstance().mPlayerID > 7 * x)
+                    mNetworkTeam = 8;
+                else if (Globals.getInstance().mPlayerID > 6 * x)
+                    mNetworkTeam = 7;
+                else if (Globals.getInstance().mPlayerID > 5 * x)
+                    mNetworkTeam = 6;
+                else if (Globals.getInstance().mPlayerID > 4 * x)
+                    mNetworkTeam = 5;
+                else if (Globals.getInstance().mPlayerID > 3 * x)
+                    mNetworkTeam = 4;
+                else if (Globals.getInstance().mPlayerID > 2 * x)
+                    mNetworkTeam = 3;
+                else if (Globals.getInstance().mPlayerID > x)
+                    mNetworkTeam = 2;
             }
-            int player = (Globals.getInstance().mPlayerID - (byte)(x * (mNetworkTeam - 1)));
+            int player = (Globals.getInstance().mPlayerID - (byte)(x * (mNetworkTeam - 1))); //Spieler 12 in Team 2 12-8*2-1=3
             mTeamLabelTV.setText(getString(R.string.team_number_label, mNetworkTeam));
             mTeamTV.setText(getString(R.string.network_team, player));
             mTeamScoreLabelTV.setVisibility(View.VISIBLE);

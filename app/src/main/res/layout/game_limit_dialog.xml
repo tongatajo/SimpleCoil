@@ -39,6 +39,14 @@
         android:textColor="#000000"
         android:text="@string/game_limit_score" />
 
+    <RadioButton
+        android:id="@+id/game_limit_flag_radio"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFFFFF"
+        android:textColor="#000000"
+        android:text="@string/game_limit_flag" />
+
     <EditText
         android:id="@+id/game_limit_et"
         android:layout_width="match_parent"

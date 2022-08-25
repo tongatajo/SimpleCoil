@@ -64,10 +64,12 @@ public class Globals {
     public static final int GAME_LIMIT_TIME = 1;
     public static final int GAME_LIMIT_LIVES = 2;
     public static final int GAME_LIMIT_SCORE = 4;
+    public static final int GAME_LIMIT_FLAG = 5;
     public volatile int mGameLimit = GAME_LIMIT_NONE;
     public volatile int mTimeLimit = 0;
     public volatile int mScoreLimit = 0;
     public volatile int mLivesLimit = 0;
+    public volatile int mFlagLimit = 0;
 
     public static final int GPS_DISABLED = 0;
     public static final int GPS_TEAMMATE = 1;
